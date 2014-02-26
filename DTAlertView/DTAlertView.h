@@ -130,6 +130,12 @@ typedef void (^DTAlertViewTextDidChangeBlock)(DTAlertView *alertView, NSString *
  */
 @property (assign) CGFloat cornerRadius;
 
+/** Defaults to 300.0f
+ *
+ * @brief When the ceiling is hit the message label is wrapped in a UIScrollView
+ */
+@property (assign) CGFloat messageCeiling;
+
 /** Default is nil. 
  *
  * @brief The background view display in alert view.

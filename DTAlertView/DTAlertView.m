@@ -267,6 +267,8 @@ const static CGFloat kMotionEffectExtent = 15.0f;
     
     [self setCancelButtonIndex];
     
+    _messageCeiling = 300.0f;
+    
     return self;
 }
 
@@ -318,6 +320,8 @@ const static CGFloat kMotionEffectExtent = 15.0f;
     _showForInputPassword = NO;
     
     [self setCancelButtonIndex];
+    
+    _messageCeiling = 300.0f;
 
     return self;
 }
@@ -959,7 +963,22 @@ const static CGFloat kMotionEffectExtent = 15.0f;
     [messageLabel sizeToFit];
     [messageLabel setCenter:CGPointMake(CGRectGetMidX(self.bounds), messageLabel.center.y)];
     
-    [self addSubview:messageLabel];
+    UIScrollView *messageScroll = [[UIScrollView alloc] init];
+    // Check to make sure messageLabel's height doesn't exceed the ceiling
+    NSLog(@"Ceiling::%f", _messageCeiling);
+    if (messageLabel.frame.size.height < _messageCeiling) [self addSubview:messageLabel];
+    else {
+        NSLog(@"Yes It's too big");
+        CGRect frame = messageLabel.frame;
+        frame.size.height = _messageCeiling;
+        
+        [messageScroll setFrame:messageRect];
+        [messageScroll setContentSize:messageLabel.frame.size];
+        [messageScroll setContentInset:UIEdgeInsetsMake(-40.0, 0, 40, 0)];
+        [messageScroll addSubview:messageLabel];
+        [self addSubview:messageScroll];
+        [self bringSubviewToFront:messageLabel];
+    }
 
 #ifdef DEBUG_MODE
     
@@ -976,7 +995,7 @@ const static CGFloat kMotionEffectExtent = 15.0f;
     switch (_alertViewMode) {
             
         case DTAlertViewModeNormal:
-            buttonsField.origin.y = CGRectGetMaxY(messageLabel.frame) + 20.0f;
+            buttonsField.origin.y = CGRectGetMaxY((messageLabel.frame.size.height<_messageCeiling)?messageLabel.frame:messageScroll.frame) + 10.0f;
             
             if (![self checkButtonTitleExist]) {
                 [self resizeViewWithLastRect:buttonsField];
