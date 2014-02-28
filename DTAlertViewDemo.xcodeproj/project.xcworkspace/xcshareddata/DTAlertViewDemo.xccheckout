@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>63C6D89D-22F0-474F-BF06-C135C906B7A2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DTAlertViewDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>553BEEE4-2DEC-4E3B-A64B-52C30224993D</key>
+		<string>ssh://github.com/VUID/DTAlertView.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DTAlertViewDemo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>553BEEE4-2DEC-4E3B-A64B-52C30224993D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/VUID/DTAlertView.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>553BEEE4-2DEC-4E3B-A64B-52C30224993D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>553BEEE4-2DEC-4E3B-A64B-52C30224993D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DTAlertView</string>
+		</dict>
+	</array>
+</dict>
+</plist>
